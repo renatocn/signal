@@ -13,6 +13,7 @@ gem 'friendly_id', '>=3.1.8'
 gem 'delayed_job', '>=2.1'
 gem "compass", ">= 0.10.2"
 gem "daemons"
+gem "devise", "= 1.2.rc2"
 
 gem 'inploy', '>=1.6.8'
 
