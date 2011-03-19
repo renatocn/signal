@@ -1,7 +1,9 @@
 Feature: Manage projects
 
   Scenario: Register new project
-    Given I am on the new projects page
+    Given I exist
+    And I log in 
+    And I am on the new projects page
     Then I should not see /Building/
 
     When I fill in "project_name" with "Geni"
@@ -12,6 +14,8 @@ Feature: Manage projects
     And I should see /Geni/
 
   Scenario: Update a project
+    Given I exist
+    And I log in 
     Given I have a project
     And I am on the edit project page
     Then I should not see /Building/
@@ -23,6 +27,8 @@ Feature: Manage projects
     And I should see /gitFake/
 
   Scenario: Remove a project
+    Given I exist
+    And I log in 
     Given I have a project with name "Test Project"
     And I am on the project page
     When I follow "remove"
@@ -30,6 +36,8 @@ Feature: Manage projects
     And I should not see "Test Project"
 
   Scenario: Build project
+    Given I exist
+    And I log in 
     Given I have a project
     And I am on the project page
     When I follow "build"
@@ -38,6 +46,8 @@ Feature: Manage projects
     And I should see the name of the project
 
   Scenario: Deploy Project
+    Given I exist
+    And I log in 
     Given I have a project
     And I am on the project page
     When I follow "deploy"

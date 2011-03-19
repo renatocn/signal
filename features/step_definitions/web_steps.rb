@@ -217,3 +217,15 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+Given /^I exist$/ do
+  $User = User.create! :email => "signal@signal.com",
+                       :password => "signal123"
+end
+
+Given /^I log in$/ do
+  visit new_user_session_path
+  fill_in "user_email", :with => $User.email
+  fill_in "user_password", :with => $User.password
+  click_button "Sign in"
+end

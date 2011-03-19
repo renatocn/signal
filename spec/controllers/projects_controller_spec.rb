@@ -1,8 +1,11 @@
 require 'spec_helper'
 
 describe ProjectsController do
+  include Devise::TestHelpers
+
   context "responding to build" do
     it "should build a project in the background" do
+      sign_in @user = Factory(:user)
       success_on_command
       project = Factory :project
       controller.stub!(:resource).and_return(project)
