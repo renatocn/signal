@@ -1,5 +1,5 @@
 class ProjectsController < InheritedResources::Base
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!, :except => [:show, :index, :fetch_status]
   respond_to :html, :xml, :rss
 
   def build
