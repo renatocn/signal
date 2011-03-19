@@ -1,7 +1,6 @@
 class ProjectsController < InheritedResources::Base
-  respond_to :html, :xml, :rss
   before_filter :authenticate_user!, :except => [:show, :index]
-  
+  respond_to :html, :xml, :rss
 
   def build
     resource.build
