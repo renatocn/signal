@@ -21,3 +21,4 @@ doc/specs.html
 doc/features.html
 rerun.txt
 *signal-auth*
+db/schema.rb
